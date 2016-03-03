@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "extends": "./node_modules/mofo-style/.eslintrc.yaml",
+  "env": {
+    "node": true,
+    "commonjs": true,
+    "es6": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "wrap-iife": [2, "any"],
+    "no-console": 1,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 2
+  },
+  "plugins": [
+    "react"
+  ]
+}
