@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mmmavis/react-wp-api-loader.git"
+    "url": "git+https://github.com/mmmavis/react-wp-content-loader.git"
   },
   "author": "Mavis Ou (https://github.com/mmmavis)",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/mmmavis/react-wp-api-loader/issues"
+    "url": "https://github.com/mmmavis/react-wp-content-loader/issues"
   },
-  "homepage": "https://github.com/mmmavis/react-wp-api-loader#readme",
+  "homepage": "https://github.com/mmmavis/react-wp-content-loader",
   "dependencies": {
     "react": "^0.14.7",
     "superagent": "^1.7.2"
