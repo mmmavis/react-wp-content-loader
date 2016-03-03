@@ -8,7 +8,7 @@
 It uses [WordPress.com's REST API](https://developer.wordpress.com/docs/api/) to get information of a WordPress Post and renders the content on the app that uses this `react-wp-content-loader` module.
 
 
-## How to install it as a dependencies?
+## How to install it as a dependency?
 
 - in `package.json` of your app, add `"react-wp-content-loader": "git://github.com/mmmavis/react-wp-content-loader.git"` as the `dependencies`
 For example,
