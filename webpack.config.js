@@ -12,6 +12,7 @@ var output = {
   path: path.join(__dirname, 'public', 'js'),
   filename: 'bundle.js',
   publicPath: '/js/',
+  library: 'bundle',
   libraryTarget: 'umd'
 };
 

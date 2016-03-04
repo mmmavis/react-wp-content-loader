@@ -1,7 +1,7 @@
-var React = require(`react`);
-var request = require(`superagent`);
+import React from 'react';
+import request from 'superagent';
 
-var WORDPRESS_COM_API_ENDPOINT_BASE = `https://public-api.wordpress.com/rest/v1.1/sites/`;
+const WORDPRESS_COM_API_ENDPOINT_BASE = `https://public-api.wordpress.com/rest/v1.1/sites/`;
 
 var ReactWpContentLoader = React.createClass({
   wpApiEndpoint: null,
