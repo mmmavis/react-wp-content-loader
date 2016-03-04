@@ -12,7 +12,7 @@ It uses [WordPress.com's REST API](https://developer.wordpress.com/docs/api/) to
 
 - in `package.json` of your app, add `"react-wp-content-loader": "git://github.com/mmmavis/react-wp-content-loader.git"` as the `dependencies`
 For example,
-```
+```js
 {
   "name": "name-of-your-app",
   "dependencies": {
@@ -29,7 +29,7 @@ For example,
 - `require` (or `import`) the this module, and make sure you pass the 2 required `prop` `wpUrl` and `wpPostSlug` to the React component.
 
 For example,
-```
+```js
 var React = require('react');
 var WpContentLoader = require('react-wp-content-loader');
 
