@@ -11,8 +11,8 @@ var ReactWpContentLoader = React.createClass({
   },
   getInitialState: function() {
     return {
-      isLoading: false,
-      hasLoaded: false
+      hasLoaded: false,
+      failedToLoad: false
     };
   },
   componentDidMount: function() {
@@ -29,20 +29,20 @@ var ReactWpContentLoader = React.createClass({
         if ( err || res.statusCode !== 200 ) {
           console.log(`error: `, err);
           this.content = `Oops, unable to load Wordpress post.`;
+          this.setState({failedToLoad: true});
         } else {
           this.content = JSON.parse(res.text).content;
         }
         this.setState({hasLoaded: true});
-
       });
   },
   render: function() {
+    var classname = this.state.failedToLoad ? `error` : ``;
+
     return (
       <div>
         { this.state.hasLoaded ?
-          <div>
-            <div dangerouslySetInnerHTML={{__html: this.content}} />
-          </div>
+          <div className={classname} dangerouslySetInnerHTML={{__html: this.content}} />
           : <p>Loading...</p>
         }
       </div>
