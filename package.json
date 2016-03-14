@@ -20,7 +20,7 @@
   "homepage": "https://github.com/mmmavis/react-wp-content-loader",
   "dependencies": {
     "react": "^0.14.7",
-    "superagent": "^1.7.2"
+    "superagent": "1.7.2"
   },
   "devDependencies": {
     "babel-core": "^6.5.2",

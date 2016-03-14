@@ -17,7 +17,7 @@ var ReactWpContentLoader = React.createClass({
   },
   componentDidMount: function() {
     this.wpApiEndpoint = WORDPRESS_COM_API_ENDPOINT_BASE + this.props.wpUrl + `/posts/slug:` + this.props.wpPostSlug;
-    console.log(`/// this.wpApiEndpoint = `, this.wpApiEndpoint);
+    console.log(`[react-wp-content-loader] wpApiEndpoint = `, this.wpApiEndpoint);
     this.getContent();
   },
   getContent: function() {
@@ -25,10 +25,9 @@ var ReactWpContentLoader = React.createClass({
       .get(this.wpApiEndpoint)
       .accept(`json`)
       .end((err, res) => {
-        console.log(`res`, res);
+        console.log(`[react-wp-content-loader] wp-api response`, res);
         if ( err || res.statusCode !== 200 ) {
-          console.log(`error: `, err);
-          this.content = `Oops, unable to load Wordpress post.`;
+          console.log(`[react-wp-content-loader] error: `, err);
           this.setState({failedToLoad: true});
         } else {
           this.content = JSON.parse(res.text).content;
@@ -37,14 +36,28 @@ var ReactWpContentLoader = React.createClass({
       });
   },
   render: function() {
-    var classname = this.state.failedToLoad ? `error` : ``;
+    var classname = ``;
+    var content = `Loading...`;
+    var errorMessage = `Oops, unable to load Wordpress post.`;
+
+    if ( this.state.hasLoaded ) {
+      content = this.content;
+      classname = `content`;
+    }
+
+    if ( this.state.failedToLoad ) {
+      console.log(this.props.children);
+      errorMessage = this.props.children ? this.props.children : errorMessage;
+      classname = `error`;
+    }
 
     return (
-      <div>
-        { this.state.hasLoaded ?
-          <div className={classname} dangerouslySetInnerHTML={{__html: this.content}} />
-          : <p>Loading...</p>
-        }
+      <div className="wp-content">
+        <div className={classname}>
+          { this.state.failedToLoad ? <div>{errorMessage}</div>
+                                    : <div dangerouslySetInnerHTML={{__html: content}} />
+          }
+        </div>
       </div>
     );
   }
