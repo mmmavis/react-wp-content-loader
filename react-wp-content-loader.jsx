@@ -46,7 +46,6 @@ var ReactWpContentLoader = React.createClass({
     }
 
     if ( this.state.failedToLoad ) {
-      console.log(this.props.children);
       errorMessage = this.props.children ? this.props.children : errorMessage;
       classname = `error`;
     }
