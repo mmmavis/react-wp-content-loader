@@ -1,7 +1,13 @@
 {
   "name": "react-wp-content-loader",
   "version": "0.0.2",
-  "description": "",
+  "description": "A React component that loads data from the WordPress API and displays it.",
+  "keywords": [
+    "mozilla",
+    "react",
+    "wp-api",
+    "wordpress"
+  ],
   "main": "./public/js/bundle.js",
   "scripts": {
     "build": "webpack --prod --progress --colors --watch",
